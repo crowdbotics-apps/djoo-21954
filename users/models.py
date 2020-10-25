@@ -11,6 +11,14 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
+    khj = models.FloatField(
+        null=True,
+        blank=True,
+    )
+    jmj = models.BigIntegerField(
+        null=True,
+        blank=True,
+    )
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
